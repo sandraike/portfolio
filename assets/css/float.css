@@ -3,42 +3,51 @@
 }
 
 body{
-	background: #EEE;
-	/* css reset */
 	padding: 0;
 	margin: 0;
+	background: #EEE;
 }
-nav{
 
+nav{
+	padding: 15px 0;
+	background: #FFF;
 }
 
 ul{
 	margin: 0;
-	padding: 0;
-	display: flex;
+	padding-left: 0;
 	list-style-type: none;
-	justify-content: space-between;
 }
 
-ul.navlist{
-	/*padding-left: 15px;
-	padding-right: 15px;
-	padding-top: 15px;
-	padding-botom: 15px;*/
-	padding: 15px;
+.navlist li, .navitems li {
+	display: inline-block;
 }
 
-.navlist a{
+/* hack for floated children */
+.navlist:after,
+.navlist:before{
+	display: table;
+	content: '';
+	clear: both;
+}
+
+
+.nav_logo{
+	float: left;
+}
+
+.navDesktop{
+	float: right;
+}
+
+
+.navitems li a{
 	text-decoration: none;
+	padding: 20px;
 }
-.navitems a{
-	padding: 10px;	
-}
+
 .banner{
-	height: 500px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	height: 300px;
 	background-image: url('../../assets/img/cmp std.png');
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -46,20 +55,22 @@ ul.navlist{
 	position: relative;
 }
 
+
 .overlay{
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	background: rgba(133,133, 133, 0.65);
-	color: #000;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	color: #FFF;
+	padding: 130px 0;
 }
 
 .overlay h3{
 	font-size: 35px;
 	letter-spacing: 2px;
+	margin: 0;
+	text-align: center;
+	line-height: 40px;
 }
 
 .container{
@@ -68,23 +79,40 @@ ul.navlist{
 	padding: 50px 0;
 }
 
-.row{
-	display: flex;
-	flex-wrap: wrap;
+
+.row:after, .row:before{
+	display: table;
+	content: '';
+	clear: both;
+	text-align: center;
 }
 
-.column{
-	flex: 0 0 calc(100% /3);
+[class*='col-']{
+	float: left;
 	padding: 15px;
+
+}
+
+
+.col-33{
+	width: calc(100% /3);
+}
+
+.col-50{
+	width: 50%
+}
+
+.col-25{
+	width: 25%
 }
 
 .box{
 	background: #FFF;
 	height: 250px;
 	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	text-align: center;
+	padding: 65px 0;
+	
 }
 
 .circle{
@@ -93,18 +121,20 @@ ul.navlist{
 	border-radius: 100%;
 	border: 2px solid #DDD;
 	background: #EEE;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	font-size: 20PX;
+	margin: 0 auto;
+	line-height: 16px;
+	padding-top: 52px;
+	padding-bottom: 52px;
 }
+
+
 
 .footer{
 	background: #FFF;
 	margin: 0;
 }
 .footer{
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 20px 0;
@@ -113,4 +143,5 @@ ul.navlist{
 
 .footer p{
 	margin: 0;
+	text-align: center;
 }

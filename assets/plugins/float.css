@@ -1,0 +1,35 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+}
+
+
+ul{
+	margin: 0;
+	padding-left: 0;
+	list-style-type: none;
+}
+
+.navlist li, .navitems li {
+	display: inline-block;
+}
+
+/* hack for floated children */
+.navlist:after,
+.navlist:before{
+	display: table;
+	content: '';
+	clear: both;
+}
+
+.nav_logo{
+	float: left;
+}
+
+.navDesktop{
+	float: right;
+}

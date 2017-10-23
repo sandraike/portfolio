@@ -1,0 +1,21 @@
+@media(max-width: 425px){
+	.navDesktop{
+		display: none;
+	}
+	.overlay h3{
+		font-size: 25px
+		text-align: center;
+	}
+
+	.column{
+		flex: 0 0 100%;
+
+	}
+	.container
+}
+
+@media(min-width: 426px){
+	.hanburger{
+		display: none;
+	}
+}
